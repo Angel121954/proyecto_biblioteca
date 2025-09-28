@@ -5,11 +5,10 @@ require_once "assets/modelos/MySQL.php";
 $sql = new MySQL();
 $sql->conectar();
 $fila = $sql->efectuarConsulta("SELECT u.id_usuario, u.nombre_usuario, u.apellido_usuario,
-                    u.email_usuario, u.fk_tipo_usuario, t.nombre_tipo_usuario FROM usuarios AS u 
-                    INNER JOIN tipos_usuarios AS t ON t.id_tipo_usuario = u.fk_tipo_usuario");
+                    u.email_usuario, contrasena_usuario, u.fk_tipo_usuario, t.id_tipo_usuario, t.nombre_tipo_usuario 
+                    FROM usuarios AS u INNER JOIN tipos_usuarios AS t ON t.id_tipo_usuario = u.fk_tipo_usuario");
 
-$tipos_usuarios_c = $sql->efectuarConsulta("SELECT * FROM tipos_usuarios GROUP BY nombre_tipo_usuario
-                                        ORDER BY id_tipo_usuario");
+$tipos_usuarios_c = $sql->efectuarConsulta("SELECT * FROM tipos_usuarios");
 $tipos_usuarios = [];
 while ($fila_tipos = $tipos_usuarios_c->fetch_assoc()) {
     $tipos_usuarios[] = $fila_tipos;
@@ -119,8 +118,16 @@ $sql->desconectar();
                             <td><?php echo $filas["nombre_tipo_usuario"]; ?></td>
                             <td class="text-center">
                                 <?php if ($_SESSION["tipo_usuario"] === "1"): ?>
-                                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-sm btn-warning" onclick="editarUsuario('<?php echo $filas['id_usuario']; ?>',
+                                                            '<?php echo $filas['nombre_usuario']; ?>',
+                                                            '<?php echo $filas['apellido_usuario']; ?>',
+                                                            '<?php echo $filas['email_usuario']; ?>',
+                                                            '<?php echo $filas['contrasena_usuario']; ?>',
+                                                            this.dataset.tiposUsuarios)"
+                                        data-tipos-usuarios='<?php echo htmlspecialchars($tipos_usuarios_json, ENT_QUOTES, "UTF-8"); ?>'><i class="bi bi-pencil-square"></i></button>
+                                    <button class="btn btn-sm btn-danger" onclick="eliminarUsuario('<?php echo $filas['id_usuario']; ?>')">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -139,6 +146,8 @@ $sql->desconectar();
 
     <!--JS-->
     <script src="assets/public/js/registro_usuario.js"></script>
+    <script src="assets/public/js/editar_usuario.js"></script>
+    <script src="assets/public/js/eliminar_usuario.js"></script>
 </body>
 
 </html>
