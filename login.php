@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inicio de Sesión</title>
     <!--Bootstrap local-->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/libs/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
     <!--Font Awesome local-->
-    <link href="assets/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="assets/libs/awesome/css/all.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
@@ -18,15 +18,15 @@
         <h2 class="text-center mb-4">
             <i class="bi bi-person-circle text-primary"></i> Iniciar Sesión
         </h2>
-        <form>
+        <form action="assets/controladores/login.php" method="post">
             <div class="mb-3">
                 <label for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Correo electronico" required>
+                <input type="email" class="form-control" id="email_usuario" name="email_usuario" placeholder="Correo electronico" required>
             </div>
 
             <div class="mb-3">
                 <label for="contrasena" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+                <input type="password" class="form-control" id="contrasena_usuario" name="contrasena_usuario" placeholder="Ingresa tu contraseña" required>
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Entrar</button>
@@ -34,7 +34,7 @@
     </div>
 
     <!--script de bootstrap local-->
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
