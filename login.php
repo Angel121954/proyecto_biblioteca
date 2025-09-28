@@ -8,8 +8,13 @@
     <!--Bootstrap local-->
     <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/libs/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
     <!--Font Awesome local-->
     <link href="assets/libs/awesome/css/all.min.css" rel="stylesheet">
+
+    <!--SweetAlert local-->
+    <link href="assets/sweetAlert/sweetalert2.min.css">
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
@@ -33,8 +38,11 @@
         </form>
     </div>
 
-    <!--script de bootstrap local-->
+    <!--Bootstrap local-->
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!--SweetAlert local-->
+    <script src="assets/sweetAlert/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
