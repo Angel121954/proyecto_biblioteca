@@ -96,7 +96,7 @@ $sql->desconectar();
             </div>
         <?php endif; ?>
 
-        <!-- Tabla de usuarios -->
+        <!-- Tabla donde se gestionan los usuarios -->
         <div class="table-responsive shadow-sm">
             <table class="table table-hover align-middle">
                 <thead>
