@@ -71,6 +71,9 @@ $sql->desconectar();
                         <button id="btn_registro_libro" href="index_libros.php" class="btn btn-outline-success">
                             <i class="fa-solid fa-book"></i> Agregar libro
                         </button>
+                        <button id="btn_registro_libro" href="/assets/controladores/reporte_inventario.php" class="btn btn-outline-danger">
+                            <i class="bi bi-file-earmark-pdf"></i> Exportar PDF
+                        </button>
                     </div>
                 </div>
             </div>
