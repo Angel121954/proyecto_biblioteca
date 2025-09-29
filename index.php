@@ -75,7 +75,7 @@ $sql->desconectar();
             </button>
         </div>
 
-        <?php if ($_SESSION["tipo_usuario"] === "1"): ?> <!--Hola mundo-->
+        <?php if ($_SESSION["tipo_usuario"] === "1"): ?> <!--Hola mundo 2-->
             <div class="toolbar mb-4">
                 <div class="row g-2">
                     <div class="col-md-12 d-flex align-items-end justify-content-md-end gap-2">
