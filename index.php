@@ -34,7 +34,7 @@ $sql->desconectar();
     <!--Font Awesome local-->
     <link href="assets/libs/awesome/css/all.min.css" rel="stylesheet">
 
-    <!--SweetAlert local-->(compañerito lo pille)
+    <!--SweetAlert local-->(brrbaloni)
     <link href="assets/sweetAlert/sweetalert2.min.css">
     <style>
         body {
