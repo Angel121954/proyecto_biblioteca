@@ -34,7 +34,7 @@ $sql->desconectar();
     <!--Font Awesome local-->
     <link href="assets/libs/awesome/css/all.min.css" rel="stylesheet">
 
-    <!--SweetAlert local-->(brrbaloni)
+    <!--SweetAlert local-->
     <link href="assets/sweetAlert/sweetalert2.min.css">
     <style>
         body {
@@ -75,7 +75,7 @@ $sql->desconectar();
             </button>
         </div>
 
-        <?php if ($_SESSION["tipo_usuario"] === "1"): ?>
+        <?php if ($_SESSION["tipo_usuario"] === "1"): ?> <!--Hola mundo-->
             <div class="toolbar mb-4">
                 <div class="row g-2">
                     <div class="col-md-12 d-flex align-items-end justify-content-md-end gap-2">
