@@ -1,5 +1,9 @@
 <?php
 
+require_once "../modelos/MySQL.php";
+$sql = new MySQL();
+$sql->conectar();
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (
         isset(
@@ -12,10 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         && !empty($_POST["nombre_usuario"]) && !empty($_POST["apellido_usuario"])
         && !empty($_POST["email_usuario"]) && !empty($_POST["contrasena_usuario"])
     ) {
-        require_once "../modelos/MySQL.php";
-        $sql = new MySQL();
-        $sql->conectar();
-
         //* variables
         $id = filter_var($_POST["id_usuario"], FILTER_SANITIZE_NUMBER_INT);
         $nombre = filter_var($_POST["nombre_usuario"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);

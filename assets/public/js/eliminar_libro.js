@@ -1,6 +1,6 @@
 function eliminarLibro(id_libro) {
   Swal.fire({
-    title: "¿Eliminar usuario?",
+    title: "¿Eliminar libro?",
     text: "Esta acción no se puede deshacer.",
     icon: "warning",
     showCancelButton: true,
@@ -22,7 +22,7 @@ function eliminarLibro(id_libro) {
           if (res.trim() === "ok") {
             Swal.fire(
               "Eliminado",
-              "Usuario eliminado correctamente.",
+              "Libro eliminado correctamente.",
               "success"
             ).then(() => location.reload());
           } else {

@@ -1,10 +1,10 @@
 <?php
 
-if (isset($_POST["id_usuario"]) && !empty($_POST["id_usuario"])) {
-    require_once "../modelos/MySQL.php";
-    $sql = new MySQL();
-    $sql->conectar();
+require_once "../modelos/MySQL.php";
+$sql = new MySQL();
+$sql->conectar();
 
+if (isset($_POST["id_usuario"]) && !empty($_POST["id_usuario"])) {
     //* variables
     $id = filter_var($_POST["id_usuario"], FILTER_SANITIZE_NUMBER_INT);
 

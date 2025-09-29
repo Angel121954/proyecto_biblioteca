@@ -32,8 +32,9 @@ document.querySelector("#btn_registro_libro").addEventListener("click", () => {
             <option value="" disabled selected>Seleccione la disponibilidad</option>
             <option value="Disponible">Disponible</option>
             <option value="No disponible">No disponible</option>
+            <option value="Prestado">Prestado</option>
           </select>
-          <label for="disponibilidad_libro">Disponibilidad del libro</label>
+          <label for="disponibilidad_libro">Disponibilidad</label>
         </div>
 
         <div class="form-floating mb-3">
@@ -42,40 +43,42 @@ document.querySelector("#btn_registro_libro").addEventListener("click", () => {
           <label for="cantidad_libro">Cantidad</label>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100 py-2">Guardar cambios</button>
+        <button type="submit" class="btn btn-primary w-100 py-2">
+          Guardar cambios
+        </button>
       </form>
     `,
     showConfirmButton: false,
     didOpen: () => {
-      document
-        .querySelector("#frm_registro_libro")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+      const form = document.querySelector("#frm_registro_libro");
 
-          const formData = new FormData(this);
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-          fetch("assets/controladores/registro_libro.php", {
-            method: "POST",
-            body: formData,
+        const formData = new FormData(form);
+
+        fetch("assets/controladores/registro_libro.php", {
+          method: "POST",
+          body: formData,
+        })
+          .then((r) => r.text())
+          .then((res) => {
+            console.log("Respuesta del servidor:", res);
+
+            if (res.trim() === "ok") {
+              Swal.fire(
+                "Éxito",
+                "Libro registrado correctamente",
+                "success"
+              ).then(() => location.reload());
+            } else {
+              Swal.fire("Error", res, "error");
+            }
           })
-            .then((r) => r.text())
-            .then((res) => {
-              console.log("Respuesta del servidor:", res);
-
-              if (res.trim() === "ok") {
-                Swal.fire(
-                  "Éxito",
-                  "Libro registrado correctamente",
-                  "success"
-                ).then(() => location.reload());
-              } else {
-                Swal.fire("Error", res, "error");
-              }
-            })
-            .catch(() =>
-              Swal.fire("Error", "Hubo un problema con la petición", "error")
-            );
-        });
+          .catch(() => {
+            Swal.fire("Error", "Hubo un problema con la petición", "error");
+          });
+      });
     },
   });
 });

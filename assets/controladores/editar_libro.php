@@ -1,5 +1,9 @@
 <?php
 
+require_once "../modelos/MySQL.php";
+$sql = new MySQL();
+$sql->conectar();
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset(
         $_POST["id_libro"],
@@ -10,10 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_POST["disponibilidad_libro"],
         $_POST["cantidad_libro"]
     )) {
-        require_once "../modelos/MySQL.php";
-        $sql = new MySQL();
-        $sql->conectar();
-
         //* variables
         $id = intval($_POST["id_libro"]);
         $titulo = filter_var($_POST["titulo_libro"], FILTER_SANITIZE_FULL_SPECIAL_CHARS);

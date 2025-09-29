@@ -35,7 +35,7 @@ $sql->desconectar();
     <link href="assets/libs/awesome/css/all.min.css" rel="stylesheet">
 
     <!--SweetAlert local-->
-    <link href="assets/sweetAlert/sweetalert2.min.css">
+    <link href="assets/libs/sweetAlert/sweetalert2.min.css">
     <style>
         body {
             background-color: #f5f6fa;

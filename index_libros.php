@@ -130,7 +130,7 @@ $sql->desconectar();
     <!--SweetAlert local-->
     <script src="assets/sweetAlert/sweetalert2.all.min.js"></script>
 
-    <!--JS-->
+    <!--JS libros-->
     <script src="assets/public/js/registro_libro.js"></script>
     <script src="assets/public/js/editar_libro.js"></script>
     <script src="assets/public/js/eliminar_libro.js"></script>
