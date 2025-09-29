@@ -4,12 +4,9 @@ function editarUsuario(
   apellido,
   email,
   contrasena,
-  tiposUsuariosStr // ← viene del atributo data-tipos-usuarios
+  tiposUsuariosStr
 ) {
-  // Convertir el JSON del dataset en un objeto JS
   const tipos_usuarios = JSON.parse(tiposUsuariosStr);
-
-  // Generar las opciones del select de tipo de usuario
   let opcionesTiposUsuario =
     '<option disabled value="">Seleccione un tipo de usuario</option>';
   tipos_usuarios.forEach((t) => {
@@ -51,7 +48,7 @@ function editarUsuario(
     didOpen: () => {
       // Preseleccionar el tipo de usuario actual
       document.querySelector("#swal_tipo_usuario").value = tipos_usuarios.find(
-        (t) => t.id_tipo_usuario == contrasena // ❗ CORRECCIÓN: este valor es el tipo actual
+        (t) => t.id_tipo_usuario == contrasena
       );
     },
     preConfirm: () => {

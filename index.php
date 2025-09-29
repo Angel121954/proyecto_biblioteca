@@ -79,6 +79,9 @@ $sql->desconectar();
             <div class="toolbar mb-4">
                 <div class="row g-2">
                     <div class="col-md-12 d-flex align-items-end justify-content-md-end gap-2">
+                        <a href="index_libros.php" class="btn btn-outline-warning">
+                            <i class="fa-solid fa-book"></i> Libros
+                        </a>
                         <button class="btn btn-outline-danger">
                             <i class="bi bi-file-earmark-pdf"></i> Exportar PDF
                         </button>
